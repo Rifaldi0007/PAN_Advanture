@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAN Network Adventure</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar sticky-top px-3 py-2">
+  <a class="navbar-brand fw-bold" href="#" onclick="home();return false"><i class="bi bi-diagram-3-fill"></i> PAN Adventure</a>
+  <div class="d-flex gap-1">
+    <button class="btn btn-sm btn-outline-secondary" title="Menu utama" onclick="home()"><i class="bi bi-house-fill"></i></button>
+    <button class="btn btn-sm btn-outline-secondary" title="Pelajari PAN" onclick="learn()"><i class="bi bi-book-fill"></i></button>
+    <button class="btn btn-sm btn-outline-secondary" title="Papan skor" onclick="board()"><i class="bi bi-trophy-fill"></i></button>
+    <button class="btn btn-sm btn-outline-secondary" id="bMus" title="Musik" onclick="toggleMusic()"><i class="bi bi-music-note-beamed"></i></button>
+    <button class="btn btn-sm btn-outline-secondary" id="bSfx" title="Efek suara" onclick="toggleSfx()"><i class="bi bi-volume-up-fill"></i></button>
+    <button class="btn btn-sm btn-outline-secondary" title="Terang / gelap" onclick="theme()"><i class="bi bi-moon-stars-fill"></i></button>
+    <button class="btn btn-sm btn-outline-danger" title="Ulangi permainan" onclick="resetAll()"><i class="bi bi-arrow-repeat"></i></button>
+  </div>
+</nav>
+
+<div class="hud container-xl py-2">
+  <div class="row g-2 align-items-center text-center">
+    <div class="col-4 col-md-2"><span class="hudi">⭐ Skor <b id="hScore">0</b></span></div>
+    <div class="col-4 col-md-2"><span class="hudi" id="hLives">❤️❤️❤️</span></div>
+    <div class="col-4 col-md-2"><span class="hudi" id="hCombo">🔥 x0</span></div>
+    <div class="col-12 col-md-6">
+      <div class="progress" role="progressbar" aria-label="Progres level" style="height:18px"><div class="progress-bar progress-bar-striped bg-success" id="hProg" style="width:0%"><span id="hProgT">0%</span></div></div>
+    </div>
+  </div>
+</div>
+
+<main class="container-xl pb-5" id="app"></main>
+
+<div class="modal fade" id="mdl" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="mT"></h5><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div>
+      <div class="modal-body" id="mB"></div>
+      <div class="modal-footer" id="mF"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
